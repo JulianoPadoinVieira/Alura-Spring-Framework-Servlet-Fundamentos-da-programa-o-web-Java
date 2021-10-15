@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class OlaMundo extends HttpServlet{
 	
 	@Override
+	//Método service recebe 2 objetos (HttpServletRequest e HttpServletResponse)
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		
 		PrintWriter out = resp.getWriter();
