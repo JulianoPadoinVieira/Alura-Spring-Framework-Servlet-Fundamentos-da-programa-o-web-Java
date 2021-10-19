@@ -3,6 +3,7 @@ package br.com.tresemeia.gerenciador.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,8 +30,19 @@ public class NovaEmpresaServlet extends HttpServlet {
 		Banco banco = new Banco();
 		banco.adiciona(empresa);
 		
-		PrintWriter out = response.getWriter();
-		out.println("<html><body><h1>Empresa " + nomeEmpresa + " cadastrada com sucesso!!!</body><html>");
+		/*
+		 * Exemplo de código para imprmir diretamente o código, não é o recomendado.
+		 * PrintWriter out = response.getWriter();
+		 * out.println("<html><body><h1>Empresa " + nomeEmpresa +
+		 * " cadastrada com sucesso!!!</h1></body><html>");
+		 */
+		
+		//Chamar o JSP
+		RequestDispatcher rd =  request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		//"empresa" é o nome que será chamado no outro lado
+		request.setAttribute("empresa", empresa.getNome());
+		//Envia o request e o response
+		rd.forward(request, response);
 	}
 
 }
