@@ -1,7 +1,6 @@
 package br.com.tresemeia.gerenciador.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -53,12 +52,15 @@ public class NovaEmpresaServlet extends HttpServlet {
 		 * " cadastrada com sucesso!!!</h1></body><html>");
 		 */
 		
+		//Manda para o navegador o novo endereço da página, redireciona.
+		response.sendRedirect("listaEmpresas");
+		
 		//Chamar o JSP
-		RequestDispatcher rd =  request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		/* RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas"); */
 		//"empresa" é o nome que será chamado no outro lado
-		request.setAttribute("empresa", empresa.getNome());
+		/* request.setAttribute("empresa", empresa.getNome()); */
 		//Envia o request e o response
-		rd.forward(request, response);
+		/* rd.forward(request, response); */
 	}
 
 }

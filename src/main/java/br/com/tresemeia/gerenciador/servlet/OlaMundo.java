@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 //A classe herda do protocolo http servlet
 public class OlaMundo extends HttpServlet{
 	
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	//Método service recebe 2 objetos (HttpServletRequest e HttpServletResponse)
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -24,7 +26,6 @@ public class OlaMundo extends HttpServlet{
 		out.println("</body>");
 		out.println("</html>");
 		
-	}
-
+	} 
 	
 }

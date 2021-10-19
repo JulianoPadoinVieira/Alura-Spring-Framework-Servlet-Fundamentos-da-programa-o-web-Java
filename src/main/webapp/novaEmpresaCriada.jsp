@@ -11,10 +11,10 @@
 </head>
 	<body>
 		<c:if test="${not empty empresa }">	
-			Empresa <b>${ empresa }</b> cadastrada com sucesso!!!</h1>
+			<h1>Empresa <b>${ empresa }</b> cadastrada com sucesso!!!</h1>
 		</c:if>		
 		<c:if test="${empty empresa }">	
-			Nenhuma empresa cadastrada.</h1>
+			<h1>Nenhuma empresa cadastrada.</h1>
 		</c:if>	
 	</body>
-<html>
+</html>
